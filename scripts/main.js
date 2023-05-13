@@ -1,13 +1,16 @@
 import { MetalOptions } from './MetalOptions.js'
 import { SizeOptions } from './SizeOptions.js'
 import { StyleOptions } from './StylesOptions.js'
-import { saveOrders } from './saveOrders.js'
+import { Orders } from './orders.js'
+import { placeOrders } from './saveOrders.js'
 
 const render = async () => {
     const metalOptionsHTML = await MetalOptions()
     const stylesOptionHTML = await StyleOptions()
     const sizeOptionHTML = await SizeOptions()
-    
+    const placeOrdersHTML =  placeOrders()
+    const ordersHTML = await  Orders()
+
     const composedHTML = `
         <h1>Kneel Diamonds</h1>
 
@@ -29,15 +32,18 @@ const render = async () => {
         </article>
 
         <article class="order">
-            ${saveOrders}
+            ${placeOrdersHTML}
         </article>
 
         <article class="customOrders">
             <h2>Custom Jewelry Orders</h2>
-
+            ${ordersHTML}
         </article>
     `
 
     container.innerHTML = composedHTML
 }
+document.addEventListener("newOrderCreated", render)
+
+
 render()

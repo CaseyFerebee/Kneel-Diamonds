@@ -14,8 +14,8 @@ export const setstylesChoice = (styleId) => {
     console.log(transientState)
 }
 
-export const setSizesChoice = (sizeid) => {
-    transientState.sizesId = sizeid
+export const setSizesChoice = (sizeId) => {
+    transientState.sizesId = sizeId
     console.log(transientState)
 }
 

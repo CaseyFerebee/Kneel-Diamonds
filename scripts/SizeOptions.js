@@ -1,11 +1,11 @@
-import { setSizesChoice } from "./Transientstate.js"
+import { setSizesChoice } from "./TransientState.js"
 
 
 
 const handleSizesChoice = (changeEvent) => {
     // Make sure you change this condition if you named your inputs differently
     if (changeEvent.target.name === "size") {
-        setSizesChoice (parseInt(changeEvent.target.value))
+        setSizesChoice(parseInt(changeEvent.target.value))
     }
 }
 
@@ -19,7 +19,7 @@ export const SizeOptions = async () => {
     const sizes = await response.json()
     // Fill in the rest
     let sizesHTML = ""
-    document.addEventListener("change", handleSizesChoice )
+    document.addEventListener("change", handleSizesChoice)
 
     const divStringArray = sizes.map(
         (size) => {

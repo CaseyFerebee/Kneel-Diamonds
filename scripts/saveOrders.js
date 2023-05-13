@@ -1,15 +1,17 @@
-import { saveOrderSubmission  } from "./Transientstate.js"
+import { saveOrderSubmission } from "./TransientState.js"
 
 
-const handleOrdersSubmissionClick= (clickEvent) => {
+const handleOrdersSubmissionClick = (clickEvent) => {
     if (clickEvent.target.id === "saveOrders") {
-        saveOrderSubmission()  
+        saveOrderSubmission()
     }
 }
 
 
-export const saveOrders = () => {
+export const placeOrders = () => {
     document.addEventListener("click", handleOrdersSubmissionClick)
 
-    return "<button id='saveOrders'>Save Order</button>" 
+
+
+    return "<button id='saveOrders'>Save Order</button>"
 }

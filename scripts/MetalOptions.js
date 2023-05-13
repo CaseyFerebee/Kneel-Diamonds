@@ -1,4 +1,4 @@
-import { setMetalsChoice } from "./Transientstate.js"
+import { setMetalsChoice } from "./TransientState.js"
 
 
 const handleMetalChoice = (changeEvent) => {
@@ -15,7 +15,7 @@ export const MetalOptions = async () => {
     const metals = await response.json()
 
     let choicesHTML = ""
-    document.addEventListener("change", handleMetalChoice )
+    document.addEventListener("change", handleMetalChoice)
 
 
     const divStringArray = metals.map(

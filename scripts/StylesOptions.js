@@ -1,4 +1,4 @@
-import { setstylesChoice } from "./Transientstate.js"
+import { setstylesChoice } from "./TransientState.js"
 
 
 
@@ -16,7 +16,7 @@ export const StyleOptions = async () => {
     const styles = await response.json()
     // Fill in the rest
     let stylesHTML = ""
-    document.addEventListener("change", handleStyleChoice  )
+    document.addEventListener("change", handleStyleChoice)
 
 
     const divStringArray = styles.map(
